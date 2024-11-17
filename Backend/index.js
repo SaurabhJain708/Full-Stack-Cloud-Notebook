@@ -6,8 +6,9 @@ const userrouter = require('./Routes/userroutes')
 const noterouter = require('./Routes/noteroutes')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
+const mongoURI = process.env.MONGO_URI;
 
-ConnectMongodb('mongodb://127.0.0.1:27017/NoteSpot')
+ConnectMongodb(mongoURI)
 
 app.use(cookieParser())
 app.use(cors({
